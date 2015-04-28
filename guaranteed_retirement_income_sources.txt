@@ -1,0 +1,91 @@
+Formula for C column on the 'Crunched Numbers' sheet:
+    =IF('Data inputs'!$G$25-1<'Crunched Numbers'!A5,D5,0)
+
+    Translation:
+      If the number at (G25-1) in the 'Data Inputs' sheet is less than A(X) in the 'Crunched Numbers' sheet,
+        give me the value at D(X) in the 'Crunched Numbers' sheet, else give me 0
+
+    What purpose does this formula have?
+      It is the formula to calculate when an individual will start collecting GUARANTEED RETIREMENT INCOME of type SS1
+
+
+Formula for E column on the 'Crunched Numbers' sheet:
+    =IF('Data Inputs'!$G$28-1<'Crunched Numbers'!A3,F3,0)
+
+    Translation:
+      If the number at (G28-1) in the 'Data Inputs' sheet is less than A(X) in the 'Crunched Numbers' sheet,
+        give me the value at F(X) in the 'Crunched Numbers' sheet, else give me 0
+
+    What purpose does this formula have?
+      It is the formula to calculate when an individual will start collecting GUARANTEED RETIREMENT INCOME of type SS2
+
+
+Formula for G column on the 'Crunched Numbers' sheet:
+    =IF('Data Inputs'!$G$24-1<'Crunched Numbers'!A3,H3,0)
+
+    Translation:
+      If the number at (G24-1) in the 'Data Inputs' sheet is less than A(X) in the 'Crunched Numbers' sheet,
+        give me the value at H(X) in the 'Crunched Numbers' sheet, else give me 0
+
+    What purpose does this formula have?
+      It is the formula to calculate when an individual will start collecting GUARANTEED RETIREMENT INCOME of type PENSION 1
+
+
+Formula for I column on the 'Crunched Numbers' sheet:
+    =If('Data Inputs'!$G$27-1<'Crunched Numbers'!A3,J3,0)
+
+    Translation:
+      If the number at (G27-1) in the 'Data Inputs' sheet is less than A(X) in the 'Crunched Numbers' sheet,
+        give me the value at J(X) in the 'Crunched Numbers' sheet, else give me 0
+
+    What purpose does this formula have?
+      It is the formula to calculate when an individual will start collecting GUARANTEED RETIREMENT INCOME of type PENSION 2
+
+
+Formula for K column on the 'Crunched Numbers' sheet:
+    =IF('Data Inputs'!$G$26-1<'Crunched Numbers'!A3,IF('Data Inputs'!$I$26+1>'Crunched Numbers'!A3,'Crunched Numbers'!L3),0)
+
+    Translation:
+      If 'Data Inputs' G26-1 is less than 'Crunched Numbers' A(X),
+        If 'Data Inputs' I26+1 is greater than 'Crunched Numbers' A(X),
+          Give me 'Crunched Numbers' L(X)
+        else
+          Give me FALSE
+      else
+        0
+      endif
+
+    What purpose does this formula have?
+      It calculates when and how much an individual will start collecting GUARANTEED RETIREMENT INCOME of type PT WORK 1
+
+
+Formula for M column on the 'Crunched Numbers' sheet:
+    =IF('Data inputs'!$G$29-1<'Crunched Numbers'!A18,IF('Data inputs'!$I$29+1>'Crunched Numbers'!A18,'Crunched Numbers'!N18),0)
+
+    Translation:
+      If 'Data Inputs' G29-1 is less than 'Crunched Numbers' A(X),
+        If 'Data Inputs' I29+1 is greater than 'Crunched Numbers' A(X),
+          Give me 'Crunched Numbers' N(X)
+        else
+          Give me FALSE
+        endif
+      else
+        0
+      endif
+
+    What purpose does this formula have?
+      It calculates when and how much an individual will start collecting GUARANTEED RETIREMENT INCOME of type PT WORK 2
+
+
+Formula for O column on the 'Crunched Numbers' sheet:
+    =IF(A38+1>'Data inputs'!$D$4,M38+K38+I38+G38+E38+C38,0)
+
+    Translation:
+      If 'Crunched Numbers' A(X)+1 is greater than 'Data Inputs' D4,
+        then give me the sum of 'Crunched Numbers' M38, K38, I38, G38, E38, C38
+      else
+        give me 0
+      end
+
+    What purpose does this formula have?
+      It calculates the total sum of GUARANTEED RETIREMENT INCOME based on the selected AGE OF RETIREMENT
