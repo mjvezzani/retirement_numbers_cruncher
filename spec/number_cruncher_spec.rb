@@ -41,4 +41,20 @@ describe NumberCruncher do
     expect(@number_cruncher.crunch_numbers).to eq 6776.55
   end
 
+  it 'determines how much a user will collect in PT Work 1 when they retire' do
+    @retirement_income.type = 'ptw1'
+    @retirement_income.start_age = 59
+    @retirement_income.annual_amount = 14000
+
+    expect(@number_cruncher.crunch_numbers).to eq 28649.70
+  end
+
+  it 'determines how much a user will collect in PT Work 1 when they retire' do
+    @retirement_income.type = 'ptw2'
+    @retirement_income.start_age = 61
+    @retirement_income.annual_amount = 9000 
+
+    expect(@number_cruncher.crunch_numbers).to eq 19350.06
+  end
+
 end
