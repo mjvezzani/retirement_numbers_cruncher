@@ -8,6 +8,13 @@ Formula for C column on the 'Crunched Numbers' sheet:
     What purpose does this formula have?
       It is the formula to calculate when an individual will start collecting GUARANTEED RETIREMENT INCOME of type SS1
 
+    What data does this formula rely on?
+      'Data Inputs'!G25 is the starting age of drawing on social security. IT IS INPUT FROM THE USER
+      'Crunched Numbers'!A(X) is calculated age, starting with the USER INPUT from 'Data Inputs'!D3,
+        and increased each year by adding A(X) and 1
+      'Crunched Numbers'!D(X) is calculated social security amount, starting with the USER INPUT from 'Data Inputs'!K25,
+        and increased each year by multiplying D(X) by 1.025
+
 
 Formula for E column on the 'Crunched Numbers' sheet:
     =IF('Data Inputs'!$G$28-1<'Crunched Numbers'!A3,F3,0)
@@ -18,6 +25,13 @@ Formula for E column on the 'Crunched Numbers' sheet:
 
     What purpose does this formula have?
       It is the formula to calculate when an individual will start collecting GUARANTEED RETIREMENT INCOME of type SS2
+
+    What data does this formula rely on?
+      'Data Inputs'!G28 is the starting age of drawing on social security (2). IT IS INPUT FROM THE USER
+      'Crunched Numbers'!A(X) is calculated age, starting with the USER INPUT from 'Data Inputs'!D3,
+        and increased each year by adding A(X) and 1
+      'Crunched Numbers'!F(X) is calculated social security (2) amount, starting with the USER INPUT from 'Data Inputs'!K28,
+        and increased each year by multiplying F(X) and 1.025
 
 
 Formula for G column on the 'Crunched Numbers' sheet:
@@ -30,6 +44,13 @@ Formula for G column on the 'Crunched Numbers' sheet:
     What purpose does this formula have?
       It is the formula to calculate when an individual will start collecting GUARANTEED RETIREMENT INCOME of type PENSION 1
 
+    What data does this formula rely on?
+      'Data Inputs'!G24 is the starting age of drawing on pension. IT IS INPUT FROM THE USER
+      'Crunched Numbers'!A(X) is calculated age, starting with the USER INPUT from 'Data Inputs'!D3,
+        and increased each year by adding A(X) and 1
+      'Crunched Numbers'!H(X) is calculated pension amount, starting with the USER INPUT from 'Data Inputs'!K24,
+        and increased each year by multiplying H(X) and  1.025
+
 
 Formula for I column on the 'Crunched Numbers' sheet:
     =If('Data Inputs'!$G$27-1<'Crunched Numbers'!A3,J3,0)
@@ -41,13 +62,23 @@ Formula for I column on the 'Crunched Numbers' sheet:
     What purpose does this formula have?
       It is the formula to calculate when an individual will start collecting GUARANTEED RETIREMENT INCOME of type PENSION 2
 
+    What data does this formula rely on?
+      'Data Inputs'!G27 is the starting age of drawing on pension. IT IS INPUT FROM THE USER
+      'Crunched Numbers'!A(X) is calculated age, starting with the USER INPUT from 'Data Inputs'!D3,
+        and increased each year by adding A(X) and 1
+      'Crunched Numbers'!J(X) is calculated pension amount, starting with the USER INPUT from 'Data Inputs'!K27,
+        and increased each year by multiplying J(X) and  1.025
+
 
 Formula for K column on the 'Crunched Numbers' sheet:
     =IF('Data Inputs'!$G$26-1<'Crunched Numbers'!A3,IF('Data Inputs'!$I$26+1>'Crunched Numbers'!A3,'Crunched Numbers'!L3),0)
 
     Translation:
+      # If the starting age of part time work is less than the referenced age
       If 'Data Inputs' G26-1 is less than 'Crunched Numbers' A(X),
+        # If the ending age of part time work is greater than the referenced age
         If 'Data Inputs' I26+1 is greater than 'Crunched Numbers' A(X),
+          # Give me the calculated income
           Give me 'Crunched Numbers' L(X)
         else
           Give me FALSE
@@ -57,6 +88,14 @@ Formula for K column on the 'Crunched Numbers' sheet:
 
     What purpose does this formula have?
       It calculates when and how much an individual will start collecting GUARANTEED RETIREMENT INCOME of type PT WORK 1
+
+    What data does this formula rely on?
+      'Data Inputs'!G26 is the starting age of part time work and IS USER INPUT
+      'Crunched Numbers'!A(X) is calculated age, starting with the USER INPUT from 'Data Inputs'!D3,
+        and increased each year by adding A(X) and 1
+      'Data Inputs'!I26 is the ending age of part time work and IS USER INPUT
+      'Crunched Numbers'!L(X) is calculated part time work amount, starting with the USER INPUT from 'Data Inputs'!K26,
+        and increased each year by multiplying L(X) and 1.025
 
 
 Formula for M column on the 'Crunched Numbers' sheet:
@@ -76,9 +115,17 @@ Formula for M column on the 'Crunched Numbers' sheet:
     What purpose does this formula have?
       It calculates when and how much an individual will start collecting GUARANTEED RETIREMENT INCOME of type PT WORK 2
 
+    What data does this formula rely on?
+      'Data Inputs'!G29 is the starting age of part time work and IS USER INPUT
+      'Crunched Numbers'!A(X) is calculated age, starting with the USER INPUT from 'Data Inputs'!D3,
+        and increased each year by adding A(X) and 1
+      'Data Inputs'!I29 is the ending age of part time work and IS USER INPUT
+      'Crunched Numbers'!N(X) is calculated part time work amount, starting with the USER INPUT from 'Data Inputs'!K26,
+        and increased each year by multiplying N(X) and 1.025
+
 
 Formula for O column on the 'Crunched Numbers' sheet:
-    =IF(A38+1>'Data inputs'!$D$4,M38+K38+I38+G38+E38+C38,0)
+    =IF(A(X)+1>'Data inputs'!$D$4,M38+K38+I38+G38+E38+C38,0)
 
     Translation:
       If 'Crunched Numbers' A(X)+1 is greater than 'Data Inputs' D4,
@@ -89,3 +136,13 @@ Formula for O column on the 'Crunched Numbers' sheet:
 
     What purpose does this formula have?
       It calculates the total sum of GUARANTEED RETIREMENT INCOME based on the selected AGE OF RETIREMENT
+
+    What data does this formula rely on?
+      'Crunched Numbers'!A(X) is calculated age, starting with the USER INPUT from 'Data Inputs'!D3
+      'Data Inputs'!D4 is the target retirement age provided as USER INPUT
+      'Crunched Numbers'!C38 is calculated SS1 amount
+      'Crunched Numbers'!E38 is calculated SS2 amount
+      'Crunched Numbers'!G38 is calculated Pension 1 amount
+      'Crunched Numbers'!I38 is calculated Pension 2 amount
+      'Crunched Numbers'!K38 is calculated PT Work 1 amount
+      'Crunched Numbers'!M38 is calculated PT Work 2 amount
