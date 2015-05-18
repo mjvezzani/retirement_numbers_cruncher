@@ -1,25 +1,7 @@
-Formula for 'Crunched Numbers' column :
-    =IF('Data inputs'!$D$4-1<'Crunched Numbers'!A32,'Crunched Numbers'!S32,0)
+Income Needs column Q
+  If target retirement age is less than or equal to current age
+    give me the calculated amount for basic needs
+  else
+    give me 0
+  end
 
-    Translation:
-      If User.target_retirement_age <  User.current_age
-        User.basic_needs_retirement_paycheck.adjusted_for_years(User.current_age - User.starting_age)
-      else
-        0
-      end
-      # If {Target Retirement Age} is less than {age} on given 'Crunched Numbers' row,
-        # Give me {Basic Needs Retirement Paycheck} adjusted for the number of years since user started saving,
-          # Else give me 0
-
-    What purpose does this formula have?
-      Calculate the age at which a person starts collecting their {Basic Needs Retirement Paycheck}
-
-    What data does this formula rely on?
-      'Data Inputs'!D4 which is the target retirement age as INPUT FROM USER
-      'Crunched Numbers'!A(X) which is the calculated age of the user based on when they desire to start saving
-      'Crunched Numbers'!S(X) which is the calculated amount in dollars that the user needs as a {Basic Needs Retirement Pay},
-        based on an initial USER INPUT ('Data Inputs'!D6) and multiplied by 1.025 each year up until the age in
-          which the function evaluates to true
-
-
-Formula for 'Crunched Numbers'
